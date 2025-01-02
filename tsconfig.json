@@ -1,11 +1,23 @@
 {
   "compilerOptions": {
-    "outDir": "./dist",
-    "target": "ES2020",
-    "module": "CommonJS",
-    "strict": true,
-    "esModuleInterop": true,
+    "target": "esnext",
     "moduleResolution": "node",
-    "types": ["node"]
-  }
+    "strict": true,
+    "declaration": true,
+    "noUnusedLocals": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "outDir": "dist",
+    "module": "esnext",
+    "lib": ["esnext"],
+    "types": ["vite/client", "node", "jest"],
+    "sourceMap": false,
+    "noEmitOnError": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": ["src", "__tests__", "./jest.setup.ts"],
+  "exclude": ["**/dist/**", "**/node_modules/**"]
 }

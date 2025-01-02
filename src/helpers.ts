@@ -19,12 +19,10 @@ export const readableDataStream = (data: string): Readable => {
   return readableStream
 }
 
-export const importJson = async (url: string) => {
-  const response = await import(url, {
-    assert: {
-      type: 'json',
-    },
-  })
+type DynamicImport = (url: string) => Promise<{ default: any }>
+
+export const importJson = async (url: string, dynamicImport: DynamicImport) => {
+  const response = await dynamicImport(url)
   return response.default
 }
 
