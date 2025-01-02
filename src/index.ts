@@ -5,7 +5,7 @@ import bodyParser from 'body-parser'
 import { delay } from './helpers'
 import type { HttpStatus, HttpMethods, HttpContentType } from './enums'
 
-interface MockMethod {
+export interface MockMethod {
   url: string
   method: HttpMethods
   timeout: number
@@ -14,7 +14,7 @@ interface MockMethod {
   response: (req: IncomingMessage, res: ServerResponse) => void | Promise<void>
 }
 
-interface MockApiPluginOptions {
+export interface MockApiPluginOptions {
   mocks: MockMethod[]
 }
 
@@ -58,3 +58,6 @@ export function connectApiMocker(options: MockApiPluginOptions): Plugin {
     },
   }
 }
+
+export * from './helpers'
+export * from './enums'
