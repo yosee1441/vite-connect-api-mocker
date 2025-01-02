@@ -1,7 +1,7 @@
 {
   "name": "vite-connect-api-mocker",
   "version": "1.0.0",
-  "description": "",
+  "description": "Create a mock API server using Vite and Connect",
   "main": "index.js",
   "scripts": {
     "lint": "eslint . --ext .ts",
@@ -10,9 +10,16 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["vite", "connect", "api", "mock"],
+  "author": "Mauricio Flor",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yosee1441/vite-connect-api-mocker.git"
+  },
+  "peerDependencies": {
+    "vite": "^4.0.0"
+  },
   "devDependencies": {
     "@types/body-parser": "^1.19.5",
     "@types/connect": "^3.4.38",
