@@ -1,9 +1,10 @@
 {
   "name": "vite-connect-api-mocker",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Create a mock API server using Vite and Connect",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "scripts": {
     "clean": "rimraf dist && rimraf es",
     "dev": "unbuild --stub",
