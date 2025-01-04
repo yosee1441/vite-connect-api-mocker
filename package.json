@@ -67,5 +67,9 @@
   "dependencies": {
     "body-parser": "1.20.3",
     "connect": "3.7.0"
+  },
+  "engines": {
+    "node": ">=16",
+    "npm": ">=8"
   }
 }
