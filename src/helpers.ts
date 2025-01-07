@@ -18,16 +18,3 @@ export const readableDataStream = (data: string): Readable => {
 
   return readableStream
 }
-
-export const importJson = async (url: string) => {
-  const response = await import(url, {
-    assert: {
-      type: 'json',
-    },
-  })
-  return response.default
-}
-
-export const convertToJson = async (response: Record<string, unknown>) => {
-  return JSON.stringify(response)
-}

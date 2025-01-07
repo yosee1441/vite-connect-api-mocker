@@ -1,6 +1,6 @@
 # Vite Connect API Mocker
 
-It’s a Vite plugin that implements Node.js and Connect to create a middleware that simulates API responses. It is particularly useful for mocking APIs.
+It’s a Vite plugin that implements Node.js and Connect to create a middleware that simulates API responses. It is particularly useful for mocking APIs in SPA applications.
 
 ## Requirements
 
@@ -25,8 +25,6 @@ import {
   HttpMethods,
   HttpStatus,
   HttpContentType,
-  importJson,
-  convertToJson,
 } from 'vite-connect-api-mocker'
 
 export default defineConfig({
@@ -40,10 +38,11 @@ export default defineConfig({
           statusCode: HttpStatus.CREATED,
           contentType: HttpContentType.JSON,
           response: async (req, res) => {
-            const response = await importJson(
+            const response = await fs.readFile(
               './mocks/api/product/POST.json',
+              'utf-8',
             )
-            res.end(convertToJson(response))
+            res.end(response)
           },
         },
       ],
