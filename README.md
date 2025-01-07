@@ -26,6 +26,7 @@ import {
   HttpStatus,
   HttpContentType,
 } from 'vite-connect-api-mocker'
+import fs from 'fs/promises'
 
 export default defineConfig({
   plugins: [
