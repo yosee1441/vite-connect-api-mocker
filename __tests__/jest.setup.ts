@@ -15,3 +15,9 @@ jest.mock('body-parser', () => ({
       (req: IncomingMessage, res: ServerResponse, next: NextFunction) => next(),
     ),
 }))
+
+jest.mock('connect', () => {
+  return jest.fn(() => ({
+    use: jest.fn(),
+  }))
+})
